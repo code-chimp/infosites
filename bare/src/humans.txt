@@ -1,0 +1,15 @@
+/* TEAM */
+    Me: Tim Goshinski
+    Twitter: @Code_Chimp
+    Location: Omaha, NE USA
+
+/* THANKS */
+
+    Name(s): Too many to name right now...
+
+/* SITE */
+    Last update: 2015/07/01
+    Languate: English (en-US)
+    Doctype: HTML5
+    Components: jQuery, Normalize.css, Sass
+    Software: vim, Sublime Text, zsh, Gulp, libsass
