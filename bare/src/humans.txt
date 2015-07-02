@@ -5,7 +5,17 @@
 
 /* THANKS */
 
-    Name(s): Too many to name right now...
+    Inspiring Dude: John Sonmez
+    Twitter: @jsonmez
+    Site: http://simpleprogrammer.com
+
+    Inspiring Dude: Derick Bailey
+    Twitter: @derickbailey
+    Site: http://derickbailey.com
+
+    Inspiring Dude: Wes Bos
+    Twitter: @wesbos
+    Site: http://wesbos.com
 
 /* SITE */
     Last update: 2015/07/01
@@ -13,3 +23,4 @@
     Doctype: HTML5
     Components: jQuery, Normalize.css, Sass
     Software: vim, Sublime Text, zsh, Gulp, libsass
+    Hosting: surge: Static Web Publishing for Front-end Devs (http://surge.sh)
