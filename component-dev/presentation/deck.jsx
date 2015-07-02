@@ -22,17 +22,17 @@ export default class extends React.Component {
       <Deck transition={['zoom','slide']} transitionDuration={800}>
         <Slide bgColor="primary">
           <Heading size={1} fit caps textColor="black">
-            Spectacle
+            Epic
           </Heading>
           <Heading size={1} fit caps margin="-20px 0px">
-            A ReactJS Presentation Library
+            A Presentation of Mind-blowing Proportions
           </Heading>
           <Heading size={2} fit caps textColor="black">
-            Where You Can Write Your Decks In JSX
+            Is coming soon to this very site - stay tuned for more&hellip;
           </Heading>
-          <Link href="https://github.com/FormidableLabs/spectacle"><Text bold caps textColor="white">View on Github</Text></Link>
           <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
         </Slide>
+
         <Slide transition={['slide']} bgColor="black">
           <Image src={images.kat.replace('/','')} margin="0px auto 40px" height="293px"/>
           <Heading size={1} fit textColor="primary" textFont="secondary">
@@ -46,6 +46,7 @@ export default class extends React.Component {
             margin="20px auto"
             textSize="1rem"/>
         </Slide>
+
         <Slide transition={['slide']} bgImage={images.city.replace('/','')} bgDarken={0.75}>
           <Appear>
             <Heading size={1} caps fit textColor="primary">
@@ -63,6 +64,7 @@ export default class extends React.Component {
             </Heading>
           </Appear>
         </Slide>
+
         <Slide transition={['zoom', 'fade']} bgColor="primary">
           <Heading caps fit>Flexible Layouts</Heading>
           <Layout>
@@ -78,12 +80,14 @@ export default class extends React.Component {
             </Fill>
           </Layout>
         </Slide>
+
         <Slide transition={['slide']} bgColor="black">
           <BlockQuote>
             <Quote>Wonderfully formatted quotes</Quote>
             <Cite>Ken Wheeler</Cite>
           </BlockQuote>
         </Slide>
+
         <Slide transition={['slide', 'spin']} bgColor="primary">
           <Heading caps fit size={1} textColor="white">
             Smooth
@@ -92,6 +96,7 @@ export default class extends React.Component {
             Combinable Transitions
           </Heading>
         </Slide>
+
         <Slide transition={['fade']} bgColor="black" textColor="primary" align="center middle">
           <List>
             <ListItem><Appear>Inline style based theme system</Appear></ListItem>
@@ -102,17 +107,19 @@ export default class extends React.Component {
             <ListItem><Appear>And...</Appear></ListItem>
           </List>
         </Slide>
+
         <Slide transition={['slide']} bgColor="primary">
           <Heading size={1} caps fit textColor="white">
             Your presentations are interactive
           </Heading>
           <Interactive/>
         </Slide>
+
         <Slide transition={['spin','slide']} bgColor="white">
           <Heading size={1} caps fit textColor="primary">
-            Made with love in Seattle by
+            Back to the main site
           </Heading>
-          <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
+          <Link href="http://code-chimp.info"><Image width="100%"/>&#171; thataway</Link>
         </Slide>
       </Deck>
     )
