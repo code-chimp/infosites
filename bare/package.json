@@ -1,0 +1,36 @@
+{
+  "name": "code-chimp.info",
+  "version": "1.0.0",
+  "description": "A holding place for my slide decks and whatnot.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "deploy": "npm run build && surge ./dist code-chimp.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-chimp/infosite.git"
+  },
+  "keywords": [
+    "presentation",
+    "slides",
+    "slidedecks"
+  ],
+  "author": "Tim Goshinski <tim@code-chimp.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/code-chimp/infosite/issues"
+  },
+  "homepage": "https://github.com/code-chimp/infosite#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.3",
+    "node-libs-browser": "^0.5.2",
+    "node-normalize-scss": "^1.0.3",
+    "node-sass": "^3.2.0",
+    "sass-loader": "^1.0.2",
+    "webpack": "^1.10.0",
+    "webpack-dev-server": "^1.10.1"
+  }
+}
