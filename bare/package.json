@@ -26,11 +26,20 @@
   "devDependencies": {
     "del": "^1.2.0",
     "gulp": "^3.9.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.0.3",
+    "gulp-util": "^3.0.6",
+    "lodash": "^3.10.0",
+    "merge-stream": "^0.1.8",
     "node-libs-browser": "^0.5.2",
     "node-normalize-scss": "^1.0.3",
     "node-sass": "^3.2.0",
+    "object-assign": "^3.0.0",
+    "pretty-hrtime": "^1.0.0",
+    "require-dir": "^0.3.0",
     "sass-loader": "^1.0.2",
+    "vinyl-source-stream": "^1.1.0",
     "webpack": "^1.10.0",
     "webpack-dev-server": "^1.10.1"
   }

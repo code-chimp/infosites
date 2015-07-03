@@ -20,7 +20,7 @@ export default class extends React.Component {
   render() {
     return (
       <Deck transition={['zoom','slide']} transitionDuration={800}>
-        <Slide bgColor="primary">
+        <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps textColor="black">
             Epic
           </Heading>
@@ -28,7 +28,7 @@ export default class extends React.Component {
             A Presentation of Mind-blowing Proportions
           </Heading>
           <Heading size={2} fit caps textColor="black">
-            Is coming soon to this very site - stay tuned for more&hellip;
+            Is coming soon to this very site &#8212; stay tuned for more&#133;
           </Heading>
           <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
         </Slide>
@@ -39,6 +39,7 @@ export default class extends React.Component {
             Wait what?
           </Heading>
         </Slide>
+
         <Slide transition={['zoom', 'fade']} bgColor="primary" align="center middle">
           <CodePane
             lang="javascript"
@@ -69,12 +70,12 @@ export default class extends React.Component {
           <Heading caps fit>Flexible Layouts</Heading>
           <Layout>
             <Fill>
-              <Heading size={4} caps textColor="black" bgColor="white" padding={10}>
+              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
                 Left
               </Heading>
             </Fill>
             <Fill>
-              <Heading size={4} caps textColor="black" bgColor="white" padding={10}>
+              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
                 Right
               </Heading>
             </Fill>
@@ -89,15 +90,15 @@ export default class extends React.Component {
         </Slide>
 
         <Slide transition={['slide', 'spin']} bgColor="primary">
-          <Heading caps fit size={1} textColor="white">
+          <Heading caps fit size={1} textColor="tertiary">
             Smooth
           </Heading>
-          <Heading caps fit size={1} textColor="black">
+          <Heading caps fit size={1} textColor="secondary">
             Combinable Transitions
           </Heading>
         </Slide>
 
-        <Slide transition={['fade']} bgColor="black" textColor="primary" align="center middle">
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary" align="center middle">
           <List>
             <ListItem><Appear>Inline style based theme system</Appear></ListItem>
             <ListItem><Appear>Autofit text</Appear></ListItem>
@@ -109,17 +110,17 @@ export default class extends React.Component {
         </Slide>
 
         <Slide transition={['slide']} bgColor="primary">
-          <Heading size={1} caps fit textColor="white">
+          <Heading size={1} caps fit textColor="tertiary">
             Your presentations are interactive
           </Heading>
           <Interactive/>
         </Slide>
 
-        <Slide transition={['spin','slide']} bgColor="white">
+        <Slide transition={['spin','slide']} bgColor="tertiary">
           <Heading size={1} caps fit textColor="primary">
-            Back to the main site
+            Back to main site
           </Heading>
-          <Link href="http://code-chimp.info"><Image width="100%"/>&#171; thataway</Link>
+          <Link href="http://code-chimp.info">&#171; thataway</Link>
         </Slide>
       </Deck>
     )

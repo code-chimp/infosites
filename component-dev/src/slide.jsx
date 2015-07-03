@@ -4,6 +4,7 @@ import tweenState from 'react-tween-state';
 import Base from './base';
 import Transitions from './transitions';
 import config from '../presentation/config';
+import Radium from 'radium';
 
 const Slide = React.createClass({
   displayName: 'Slide',
@@ -31,9 +32,22 @@ const Slide = React.createClass({
     window.removeEventListener('resize', this.setZoom);
   },
   render() {
+    let exportMode = false;
+    let printMode = false;
+    if (this.context.router.state.location.query &&
+        'export' in this.context.router.state.location.query) {
+      exportMode = true;
+      if ('print' in this.context.router.state.location.query) {
+        printMode = true;
+      }
+    }
+    let printStyles = printMode ? {
+      backgroundColor: 'white',
+      backgroundImage: 'none'
+    } : {};
     let styles = {
       outer: {
-        position: 'absolute',
+        position: exportMode ? 'relative' : 'absolute',
         top: 0,
         left: 0,
         width: '100%',
@@ -54,10 +68,10 @@ const Slide = React.createClass({
     };
     return (
       <div className="spectacle-slide"
-        style={assign({}, styles.outer, this.getStyles(), this.getTransitionStyles())}>
-        <div style={styles.inner}>
+        style={[styles.outer, this.getStyles(), this.getTransitionStyles(), printStyles]}>
+        <div style={[styles.inner]}>
           <div ref="content"
-            style={assign({}, styles.content, this.context.styles.components.content)}>
+            style={[styles.content, this.context.styles.components.content]}>
             {this.props.children}
           </div>
         </div>
@@ -66,4 +80,4 @@ const Slide = React.createClass({
   }
 });
 
-export default Slide;
+export default Radium(Slide);
