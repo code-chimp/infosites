@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Home{% endblock %} :: code chimp</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link type="text/plain" rel="author" href="http://code-chimp.info/humans.txt" />
+</head>
+<body>
+  <header class="centered-navigation" role="banner">
+    <div class="centered-navigation-wrapper">
+      <a href="javascript:void(0)" class="mobile-logo">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+      </a>
+      <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+      <nav role="navigation">
+        <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+          <li class="nav-link"><a href="about.html">About Me</a></li>
+          <li class="nav-link"><a href="contact.html">Contact</a></li>
+          <li class="nav-link logo">
+            <a href="javascript:void(0)" class="logo">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+            </a>
+          </li>
+          <li class="nav-link"><a href="javascript:void(0)">Magic Beans</a></li>
+          <li class="nav-link more"><a href="javascript:void(0)">Decks</a>
+            <ul class="submenu">
+              <li><a href="http://component-dev.code-chimp.info">Component Based Development</a></li>
+              <li><a href="javascript:void(0)">Another Item</a></li>
+              <li class="more"><a href="javascript:void(0)">Item with submenu</a>
+                <ul class="submenu">
+                  <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
+                  <li><a href="javascript:void(0)">Another Item</a></li>
+                </ul>
+              </li>
+              <li class="more"><a href="javascript:void(0)">Another submenu</a>
+                <ul class="submenu">
+                  <li><a href="javascript:void(0)">Sub-submenu</a></li>
+                  <li><a href="javascript:void(0)">An Item</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  {% block body %}
+  {% endblock %}
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-logo">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><h3>Content</h3></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul></ul>
+      <ul>
+        <li><h3>Follow Me</h3></li>
+        <li><a href="https://twitter.com/code_chimp">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/tgoshinski">LinkedIn</a></li>
+        <li><a href="http://ghost.code-chimp.com">Blog</a></li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <p>Lovingly hand-crafted by a knuckle-dragging keyboard ape. &copy; 2015</p>
+  </footer>
+
+  <script src="js/vendor/jquery/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
+      $('#js-centered-navigation-menu').removeClass("show");
+
+      menuToggle.on('click', function(e) {
+        e.preventDefault();
+        $('#js-centered-navigation-menu').slideToggle(function(){
+          if($('#js-centered-navigation-menu').is(':hidden')) {
+            $('#js-centered-navigation-menu').removeAttr('style');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
