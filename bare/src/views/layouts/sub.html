@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact :: code-chimp</title>
+  <title>{% block title %}{% endblock %} :: code chimp</title>
   <link rel="stylesheet" href="css/style.css">
+  <link type="text/plain" rel="author" href="http://code-chimp.info/humans.txt" />
 </head>
 <body>
   <div class="content-wrapper">
-    <h1>Contact code-chimp</h1>
+    {% block body %}Frankie say make content{% endblock %}
   </div>
+
   <footer class="footer-2" role="contentinfo">
     <div class="footer-logo">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">

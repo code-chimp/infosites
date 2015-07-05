@@ -4,7 +4,7 @@ var config = require('./');
 module.exports = {
   autoprefixer: {browsers: ['last 2 version']},
   src: config.sourceAssets + '/sass/style.scss',
-  allSrc: config.sourceAssets + '/sass/**/*.scss',
+  watch: config.sourceAssets + '/sass/**/*.scss',
   dest: config.distDirectory + '/css',
   settings: {
     includePaths: [normalizePath],
