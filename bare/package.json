@@ -23,6 +23,9 @@
     "url": "https://github.com/code-chimp/infosite/issues"
   },
   "homepage": "https://github.com/code-chimp/infosite#readme",
+  "dependencies": {
+    "lodash": "^3.10.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.7.13",
     "del": "^1.2.0",
@@ -31,16 +34,22 @@
     "gulp-changed": "^1.2.1",
     "gulp-data": "^1.2.0",
     "gulp-extname": "^0.2.0",
+    "gulp-filter": "^2.0.2",
     "gulp-htmlmin": "^1.1.3",
     "gulp-imagemin": "^2.3.0",
+    "gulp-minify-css": "^1.2.0",
     "gulp-notify": "^2.2.0",
     "gulp-nunjucks-render": "^0.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^5.0.1",
+    "gulp-rev-replace": "^0.4.2",
     "gulp-sass": "^2.0.3",
     "gulp-sequence": "^0.3.2",
+    "gulp-sizereport": "^1.1.2",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
-    "lodash": "^3.10.0",
     "merge-stream": "^0.1.8",
     "node-libs-browser": "^0.5.2",
     "node-normalize-scss": "^1.0.3",

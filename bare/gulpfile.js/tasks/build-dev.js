@@ -4,7 +4,7 @@ var gulpSequence = require('gulp-sequence');
 gulp.task('build:dev', function (cb) {
   gulpSequence(
     'clean',
-    ['images'],
+    ['statics', 'images'],
     ['sass', 'html'],
     ['watch', 'browserSync'], cb);
 });
