@@ -1,6 +1,6 @@
 var config = require('./');
 
 module.exports = {
-  src: config.sourceAssets + '/*.{txt,ico}',
+  src: config.sourceAssets + '/*.{ico,json,png,txt,xml}',
   dest: config.distDirectory
 };
