@@ -23,8 +23,45 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body>
-  <div class="content-wrapper">
+<body id="sub-document">
+  <div class="wrapper-for-content-outside-of-footer">
+    <header class="navigation" role="banner">
+      <div class="navigation-wrapper">
+        <a href="/" class="logo">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="code chimp logo">
+        </a>
+        <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+        <nav role="navigation">
+          <ul id="js-navigation-menu" class="navigation-menu show">
+            {# <li class="nav-link"><a href="javascript:void(0)">Products</a></li> #}
+            <li class="nav-link"><a href="javascript:void(0)">About Me</a></li>
+            <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
+            <li class="nav-link more"><a href="javascript:void(0)">More</a>
+              <ul class="submenu">
+                <li><a href="javascript:void(0)">Submenu Item</a></li>
+                <li><a href="javascript:void(0)">Another Item</a></li>
+                <li class="more"><a href="javascript:void(0)">Item with submenu</a>
+                  <ul class="submenu">
+                    <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
+                    <li><a href="javascript:void(0)">Another Item</a></li>
+                  </ul>
+                </li>
+                <li class="more"><a href="javascript:void(0)">Another submenu</a>
+                  <ul class="submenu">
+                    <li><a href="javascript:void(0)">Sub-submenu</a></li>
+                    <li><a href="javascript:void(0)">An Item</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="navigation-tools">
+          <div class="search-bar">
+          </div>
+        </div>
+      </div>
+    </header>
     {% block body %}Frankie say make content{% endblock %}
   </div>
 
@@ -33,9 +70,8 @@
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
     </div>
       <ul>
-        <li><a href="javascript:void(0)">About</a></li>
-        <li><a href="javascript:void(0)">Contact</a></li>
-        <li><a href="javascript:void(0)">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
 
       <div class="footer-secondary-links">
@@ -45,29 +81,52 @@
         </ul>
 
         <ul class="footer-social">
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
-            </a></li>
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
-          </a></li>
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-          </a></li>
+          <li>
+            <a href="https://twitter.com/code_chimp">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-fw fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/tgoshinski">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-fw fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/code-chimp">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-fw fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="http://ghost.code-chimp.com">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-fw fa-bullhorn fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
         </ul>
       </div>
   </footer>
   <script src="js/vendor/jquery/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
-      var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
-      $('#js-centered-navigation-menu').removeClass("show");
+      var menuToggle = $('#js-mobile-menu').unbind();
+      $('#js-navigation-menu').removeClass("show");
 
       menuToggle.on('click', function(e) {
         e.preventDefault();
-        $('#js-centered-navigation-menu').slideToggle(function(){
-          if($('#js-centered-navigation-menu').is(':hidden')) {
-            $('#js-centered-navigation-menu').removeAttr('style');
+        $('#js-navigation-menu').slideToggle(function(){
+          if($('#js-navigation-menu').is(':hidden')) {
+            $('#js-navigation-menu').removeAttr('style');
           }
         });
       });
