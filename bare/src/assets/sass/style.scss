@@ -2,6 +2,14 @@
 // $visual-grid-color: lightblue;
 // $visual-grid-index: front;
 
+// Custom Site Fonts
+$quicksand: 'QuicksandBook', Georgia, Times, serif;
+$inconsolata: 'InconsolataMedium', 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
+
+// overrides
+$base-font-family: $quicksand;
+$heading-font-family: $base-font-family;
+
 @import 'plugins/plugins-dir';
 @import 'base/base-dir';
 @import 'modules/modules-dir';

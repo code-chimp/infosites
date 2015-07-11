@@ -5,6 +5,6 @@ gulp.task('build:dev', function (cb) {
   gulpSequence(
     'clean',
     ['statics', 'fonts', 'images'],
-    ['sass', 'html'],
+    ['sass', 'webpack:dev', 'html'],
     ['watch', 'browserSync'], cb);
 });

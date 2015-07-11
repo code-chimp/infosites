@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'InconsolataMedium';
+  src: url('#{$font-path}/Inconsolata-webfont.eot');
+  src: url('#{$font-path}/Inconsolata-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/Inconsolata-webfont.woff') format('woff'),
+    url('#{$font-path}/Inconsolata-webfont.ttf') format('truetype'),
+    url('#{$font-path}/Inconsolata-webfont.svg#InconsolataMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

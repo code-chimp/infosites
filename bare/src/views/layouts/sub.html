@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{% block title %}{% endblock %} :: code chimp</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link type="text/plain" rel="author" href="http://code-chimp.info/humans.txt" />
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#2b5797">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-</head>
-<body id="sub-document">
+{% extends "layouts/page.html" %}
+
+{% block pageId %}sub-document{% endblock %}
+
+{% block pageContent %}
   <div class="wrapper-for-content-outside-of-footer">
     <header class="navigation" role="banner">
       <div class="navigation-wrapper">
@@ -106,6 +85,14 @@
             </a>
           </li>
           <li>
+            <a href="https://plus.google.com/+TimothyGoshinski/">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-fw fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
             <a href="http://ghost.code-chimp.com">
               <span class="fa-stack">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -116,21 +103,4 @@
         </ul>
       </div>
   </footer>
-  <script src="js/vendor/jquery/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var menuToggle = $('#js-mobile-menu').unbind();
-      $('#js-navigation-menu').removeClass("show");
-
-      menuToggle.on('click', function(e) {
-        e.preventDefault();
-        $('#js-navigation-menu').slideToggle(function(){
-          if($('#js-navigation-menu').is(':hidden')) {
-            $('#js-navigation-menu').removeAttr('style');
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+{% endblock %}

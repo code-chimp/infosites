@@ -24,3 +24,6 @@
     Components: jQuery, Normalize.css, Sass
     Software: vim, Sublime Text, zsh, Gulp, libsass
     Hosting: surge: Static Web Publishing for Front-end Devs (http://surge.sh)
+
+/* ACKNOWLEDGEMENTS */
+    "Cyborg Ape" image courtesy of Sichiu [http://piq.codeus.net/u/sichiu]
