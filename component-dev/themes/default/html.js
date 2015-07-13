@@ -3,9 +3,11 @@ module.exports = function(data) {
     '200.html': data.defaultTemplate(),
     'index.html': [
       '<!doctype html>',
-        '<html>',
+        '<html lang="en">',
           '<head>',
             '<meta charset="utf-8"/>',
+            '<title>Component Based Development :: code chimp</title>',
+            '<link type="text/plain" rel="author" href="http://code-chimp.info/humans.txt" />',
             '<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>',
             '<link href="http://fonts.googleapis.com/css?family=Lobster+Two:400,700" rel="stylesheet" type="text/css">',
             '<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">',

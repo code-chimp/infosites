@@ -15,6 +15,28 @@ Building the dist version of the project is as easy as running `npm run build`
 
 If you want to deploy the slideshow to surge, run `npm run deploy`
 
+## Presenting
+
+Spectacle comes with a built in presenter mode. It shows you a slide lookahead, current time and your current slide:
+
+![http://i.imgur.com/csPXbjM.png](http://i.imgur.com/csPXbjM.png)
+
+To present:
+
+- Run `npm start`
+- Open two browser windows on two different screens
+- On your screen visit [http://localhost:3000/#/?presenter](http://localhost:3000/#/)
+- On the presentation screen visit [http://localhost:3000/#/](http://localhost:3000/#/)
+- Give an amazingly stylish presentation
+
+_Note: Any windows/tabs in the same browser that are running Spectacle will sync to one another, even if you don't want to use presentation mode_
+
+Check it out:
+
+![http://i.imgur.com/H7o2qHI.gif](http://i.imgur.com/H7o2qHI.gif_)
+
+You can toggle the presenter or overview mode by pressing respectively `p` and `o`.
+
 ## PDF Export
 
 Exporting a totally sweet looking PDF from your totally sweet looking Spectacle presentation is asburdly easy.
@@ -157,8 +179,9 @@ The deck tag is the top level tag and there should only be one of them. It suppo
 
 |Name|PropType|Description|
 |---|---|---|
-|transition|React.PropTypes.array|Accepts `slide`, `zoom`, `fade` or `spin`, and can be combined. Sets global slide transitions.|
+|transition|React.PropTypes.array|Accepts `slide`, `zoom`, `fade` or `spin`, and can be combined. Sets global slide transitions. **Note: If you use the 'scale' transition, fitted text won't work in Safari.**|
 |transitionDuration| React.PropTypes.number| Accepts integer value in milliseconds for global transition duration.
+|progress| React.PropTypes.string|Accepts `pacman`, `bar`, `number` or `none`.
 
 ####\<Slide /> (Base)
 
@@ -166,9 +189,10 @@ The slide tag represents each slide in the presentation. It supports the followi
 
 |Name|PropType|Description|
 |---|---|---|
-|align| React.PropTypes.string | Accepts a space delimited value for positioning interior content. The first value can be `left`, `center`, or `right`. The second value can be `top`, `middle`, or `bottom`. You would provide this prop like `align="center middle"`, which is it's default.
-|transition|React.PropTypes.array|Accepts `slide`, `zoom`, `fade` or `spin`, and can be combined. Sets the slide transition.|
+|align| React.PropTypes.string | Accepts a space delimited value for positioning interior content. The first value can be `flex-start` (left), `center` (middle), or `flex-end` (bottom). The second value can be `flex-start` (top) , `center` (middle), or `flex-end` (bottom). You would provide this prop like `align="center middle"`, which is it's default.
+|transition|React.PropTypes.array|Accepts `slide`, `zoom`, `fade` or `spin`, and can be combined. Sets the slide transition. **Note: If you use the 'scale' transition, fitted text won't work in Safari.**|
 |transitionDuration| React.PropTypes.number| Accepts integer value in milliseconds for slide transition duration.
+|notes| React.PropTypes.stings| Text which will appear in the presenter mode. Can be HTML.
 
 ###Layout Tags
 
@@ -224,7 +248,7 @@ Heading tags are special in that, when you specify a `size` prop, they generate 
 
 |Name|PropType|Description|
 |---|---|---|
-|fit|React.PropTypes.boolean| When set to true, fits text to the slide's width |
+|fit|React.PropTypes.boolean| When set to true, fits text to the slide's width. **Note: If you use the 'scale' transition, this won't work in Safari.** |
 
 ####\<Image /> (Base)
 
@@ -270,7 +294,7 @@ The `Text` tag is used to add text to your slide.
 
 |Name|PropType|Description|
 |---|---|---|
-|fit|React.PropTypes.boolean| When set to true, fits text to the slide's width |
+|fit|React.PropTypes.boolean| When set to true, fits text to the slide's width. **Note: If you use the 'scale' transition, this won't work in Safari.** |
 
 ### Base Props
 
