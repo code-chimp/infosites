@@ -1,7 +1,7 @@
 import React from "react/addons";
 
 import {
-  Appear, BlockQuote, Cite, CodePane, Deck, Fill,
+  Appear, BlockQuote, Cite, CodePane, Deck, Fit, Fill,
   Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 } from "../src/spectacle";
 
@@ -38,15 +38,15 @@ export default class extends React.Component {
           <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
         </Slide>
 
-        <Slide transition={['slide']} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-          <Image src={images.cyborg.replace('/','')} margin="0px auto 40px" height="293px"/>
+        <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+          <Image src={images.cyborg.replace("/", "")} margin="0px auto 40px" height="293px"/>
           <Heading size={1} fit textColor="primary" textFont="secondary">
             Web Components? Polymer? React?
           </Heading>
         </Slide>
 
         <Slide
-          transition={['spin']}
+          transition={["spin"]}
           bgColor="primary"
           notes="<ul><li>Alex Russell 2011</li><li>filler</li></ul>"
         >
@@ -54,7 +54,7 @@ export default class extends React.Component {
         </Slide>
 
         <Slide
-          transition={['spin', 'fade']}
+          transition={["spin", "fade"]}
           bgColor="primary"
           notes="<ul><li>Mozilla 2013</li><li>pre-built components</li><li>x-tag polyfill library</li><li>v 2.0 switching to Polymer's polyfill library</li></ul>"
         >
@@ -62,23 +62,89 @@ export default class extends React.Component {
         </Slide>
 
         <Slide
-          transition={['zoom', 'fade']}
+          transition={["spin", "fade"]}
+          bgColor="primary"
+          notes="<ul><li>Google 2013</li><li>moar interestin stuffs</li></ul>"
+        >
+          <Text>Slide on Google Polymer</Text>
+        </Slide>
+
+        <Slide
+          transition={["zoom", "fade"]}
           bgColor="primary"
           notes="<ul><li>Google 2013</li><li>filler</li></ul>"
         >
-          <Heading size={2} fit caps textColor="black">
-            Polymer Example
-          </Heading>
-          <Text>Definition:</Text>
+          <Text textAlign="left" textSize={25} bold>Definition:</Text>
           <CodePane
             lang="html"
             source={require("raw!./snippets/polymer-1.html")}
             margin="20px auto"/>
-          Usage:
+          <Appear>
+          <Text textAlign="left" textSize={25} bold>Usage:</Text>
           <CodePane
             lang="html"
             source={require("raw!./snippets/polymer-2.html")}
             margin="20px auto"/>
+          </Appear>
+        </Slide>
+
+        <Slide
+          transition={["zoom", "fade"]}
+          bgColor="primary"
+          notes="Polymer Example"
+        >
+          <Appear fid="6">
+            <Layout>
+              <Fill>
+                <Text textAlign="left" bgColor="white" margin={10}>One</Text>
+              </Fill>
+              <Fill>
+                <Text bgColor="white" margin={10}>Two</Text>
+              </Fill>
+              <Fill>
+                <Text textAlign="right" bgColor="white" margin={10}>Three</Text>
+              </Fill>
+            </Layout>
+          </Appear>
+          <Appear fid="5">
+            <Layout>
+              <Fill>
+                <Text bgColor="white" margin={10}>Four</Text>
+              </Fill>
+              <Fill>
+                <Text bgColor="white" margin={10}>Five</Text>
+              </Fill>
+            </Layout>
+          </Appear>
+          <Layout>
+            <Fill>
+              <Appear fid="4">
+                <Text bgColor="white" margin={10}>Six</Text>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="3">
+                <Text bgColor="white" margin={10}>Seven</Text>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="2">
+                <Text bgColor="white" margin={10}>Eight</Text>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="1">
+                <Text bgColor="white" margin={10}>Nine</Text>
+              </Appear>
+            </Fill>
+          </Layout>
+          <Appear fid="7">
+            <Layout>
+              <Fill>
+                <Text bgColor="white" margin={10}>Ten</Text>
+              </Fill>
+            </Layout>
+          </Appear>
         </Slide>
 
         <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
@@ -97,22 +163,6 @@ export default class extends React.Component {
               Background Imagery
             </Heading>
           </Appear>
-        </Slide>
-
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
-          <Heading caps fit>Flexible Layouts</Heading>
-          <Layout>
-            <Fill>
-              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                Left
-              </Heading>
-            </Fill>
-            <Fill>
-              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                Right
-              </Heading>
-            </Fill>
-          </Layout>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="black">
