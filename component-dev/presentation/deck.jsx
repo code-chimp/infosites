@@ -1,19 +1,23 @@
 import React from "react/addons";
 
 import {
-  Appear, BlockQuote, Cite, CodePane, Deck, Fit, Fill,
+  Appear, BlockQuote, Cite, CodePane, Deck, Fill,
   Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 } from "../src/spectacle";
 
 import preloader from "../src/utils/preloader";
 
 import Interactive from "./interactive";
+import SlideNotes from "./slide-notes";
 
 const images = {
   city: require("./city.jpg"),
   kat: require("./kat.png"),
   logo: require("./formidable-logo.svg"),
-  cyborg: require("./cyborg-ape.png")
+  cyborg: require("./cyborg-ape.png"),
+  webcomponentsLogo: require("./logos/webcomponents-logo.png"),
+  brickLogo: require("./logos/brick-logo.png"),
+  polymerLogo: require("./logos/polymer-logo.png")
 };
 
 preloader([images.city, images.kat]);
@@ -38,7 +42,7 @@ export default class extends React.Component {
           <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+        <Slide transition={["slide"]} bgColor="black" notes={SlideNotes.chimpSlide}>
           <Image src={images.cyborg.replace("/", "")} margin="0px auto 40px" height="293px"/>
           <Heading size={1} fit textColor="primary" textFont="secondary">
             Web Components? Polymer? React?
@@ -47,24 +51,51 @@ export default class extends React.Component {
 
         <Slide
           transition={["spin"]}
-          bgColor="primary"
-          notes="<ul><li>Alex Russell 2011</li><li>filler</li></ul>"
+          bgColor="secondary"
+          bgImage={images.webcomponentsLogo.replace("/", "")}
+          notes={SlideNotes.alexRussell}
         >
           <Text>Embed conference video?</Text>
         </Slide>
 
         <Slide
           transition={["spin", "fade"]}
-          bgColor="primary"
-          notes="<ul><li>Mozilla 2013</li><li>pre-built components</li><li>x-tag polyfill library</li><li>v 2.0 switching to Polymer's polyfill library</li></ul>"
+          bgColor="secondary"
+          bgImage={images.brickLogo.replace("/", "")}
+          notes={SlideNotes.brickOverview}
         >
           <Text>Slide on Mozilla Brick</Text>
         </Slide>
 
         <Slide
-          transition={["spin", "fade"]}
+          transition={["zoom", "fade"]}
           bgColor="primary"
-          notes="<ul><li>Google 2013</li><li>moar interestin stuffs</li></ul>"
+          notes={SlideNotes.brickTemplateExample}
+        >
+          <Text textAlign="left" textSize={15} bold>Brick Template:</Text>
+          <CodePane
+            lang="html"
+            source={require("raw!./snippets/brick-button.html")}
+            margin="0 auto"/>
+        </Slide>
+
+        <Slide
+          transition={["zoom", "fade"]}
+          bgColor="primary"
+          notes={SlideNotes.brickCodeExample}
+        >
+          <Text textAlign="left" textSize={15} bold>Brick Component Behavior:</Text>
+          <CodePane
+            lang="javascript" fontSize={10}
+            source={require("raw!./snippets/brick-button.js")}
+            margin="0 auto"/>
+        </Slide>
+
+        <Slide
+          transition={["spin", "fade"]}
+          bgColor="secondary"
+          bgImage={images.polymerLogo.replace("/", "")}
+          notes={SlideNotes.polymerOverview}
         >
           <Text>Slide on Google Polymer</Text>
         </Slide>
@@ -72,18 +103,18 @@ export default class extends React.Component {
         <Slide
           transition={["zoom", "fade"]}
           bgColor="primary"
-          notes="<ul><li>Google 2013</li><li>filler</li></ul>"
+          notes={SlideNotes.polymerExample}
         >
           <Text textAlign="left" textSize={25} bold>Definition:</Text>
           <CodePane
             lang="html"
-            source={require("raw!./snippets/polymer-1.html")}
+            source={require("raw!./snippets/polymer-definition.html")}
             margin="20px auto"/>
           <Appear>
           <Text textAlign="left" textSize={25} bold>Usage:</Text>
           <CodePane
             lang="html"
-            source={require("raw!./snippets/polymer-2.html")}
+            source={require("raw!./snippets/polymer-usage.html")}
             margin="20px auto"/>
           </Appear>
         </Slide>

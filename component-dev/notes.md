@@ -6,6 +6,7 @@
     * v 2.0 merging with Polymer (2016?)
 * Polymer released by Google in 2013
 * Chrome only browser with some version of true web components
+* jQuery UI Widget Factory [Honorable Mention] https://jqueryui.com/widget/
 
 
 
