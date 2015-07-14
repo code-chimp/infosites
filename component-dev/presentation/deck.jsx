@@ -2,7 +2,7 @@ import React from "react/addons";
 
 import {
   Appear, BlockQuote, Cite, CodePane, Deck, Fill,
-  Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
+  Heading, Image, Layout, Link, ListItem, List, Morph, Quote, Slide, Text
 } from "../src/spectacle";
 
 import preloader from "../src/utils/preloader";
@@ -14,6 +14,7 @@ const images = {
   city: require("./city.jpg"),
   kat: require("./kat.png"),
   logo: require("./formidable-logo.svg"),
+  doge: require("./Doge.png"),
   cyborg: require("./cyborg-ape.png"),
   webcomponentsLogo: require("./logos/webcomponents-logo-huge.png"),
   brickLogo: require("./logos/brick-logo-huge.png"),
@@ -21,7 +22,7 @@ const images = {
   reactLogo: require("./logos/react-logo-huge.png")
 };
 
-preloader([images.city, images.kat]);
+preloader([images.city, images.kat, images.doge, images.cyborg]);
 
 export default class extends React.Component {
   render() {
@@ -43,6 +44,16 @@ export default class extends React.Component {
           <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
         </Slide>
 
+        <Slide transition={["zoom", "fade"]} bgColor="primary">
+          <Morph>
+            <Image src={images.cyborg.replace("/", "")} margin="0px auto 40px" height="293px"/>
+            <Heading size={1} position="absolute">Crazy Animations</Heading>
+            <Heading size={1} position="absolute">So Clean</Heading>
+            <Heading size={1} position="absolute">Much Morphing</Heading>
+            <Image src={images.doge.replace("/", "")} margin="0px auto 40px" height="293px"/>
+          </Morph>
+        </Slide>
+
         <Slide transition={["slide"]} bgColor="black" notes={SlideNotes.chimpSlide}>
           <Image src={images.cyborg.replace("/", "")} margin="0px auto 40px" height="293px"/>
           <Heading size={1} fit textColor="primary" textFont="secondary">
@@ -56,6 +67,9 @@ export default class extends React.Component {
           bgImage={images.webcomponentsLogo.replace("/", "")}
           notes={SlideNotes.alexRussell}
         >
+          <Heading size={2} fit caps textColor="white">
+             Yo dawg I heard you like titles
+          </Heading>
           <Text>Embed conference video?</Text>
         </Slide>
 
@@ -188,7 +202,7 @@ export default class extends React.Component {
           <Layout>
             <Fill>
               <Appear fid="e7">
-                <Text textAlign="left" bgColor="white" margin={10}>Microsoft Edge/Universal?</Text>
+                <Text bgColor="white" margin={10}>Microsoft Edge/Universal?</Text>
               </Appear>
             </Fill>
             <Fill>
