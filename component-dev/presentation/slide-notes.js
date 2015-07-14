@@ -19,13 +19,21 @@ const SlideNotes = {
 
     brickTemplateExample:
       "<ul>" +
+        "<li>Example from 1.x branch</li>" +
+        "<li>Imports</li>" +
+        "<li>Self-contained styling</li>" +
+        "<li>'content' target for child elements</li>" +
+      "</ul>",
+
+    brickTemplateExample2:
+      "<ul>" +
         "<li>Example from 2.0 branch</li>" +
         "<li>Imports</li>" +
         "<li>Self-contained styling</li>" +
         "<li>'content' target for child elements</li>" +
       "</ul>",
 
-    brickCodeExample:
+    brickCodeExample2:
       "<ul>" +
         "<li>IIFE wrapper</li>" +
         "<li>pre-built components</li>" +
@@ -43,6 +51,14 @@ const SlideNotes = {
       "<ul>" +
         "<li>Showing definition</li>" +
         "<li>and usage</li>" +
+      "</ul>",
+
+    reactOverview:
+      "<ul>" +
+        "<li>Facebook 20??</li>" +
+        "<li>Instagram 20??</li>" +
+        "<li>Open sourced 20??</li>" +
+        "<li>and more details</li>" +
       "</ul>"
 };
 

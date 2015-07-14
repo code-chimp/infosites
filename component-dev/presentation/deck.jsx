@@ -15,9 +15,10 @@ const images = {
   kat: require("./kat.png"),
   logo: require("./formidable-logo.svg"),
   cyborg: require("./cyborg-ape.png"),
-  webcomponentsLogo: require("./logos/webcomponents-logo.png"),
-  brickLogo: require("./logos/brick-logo.png"),
-  polymerLogo: require("./logos/polymer-logo.png")
+  webcomponentsLogo: require("./logos/webcomponents-logo-huge.png"),
+  brickLogo: require("./logos/brick-logo-huge.png"),
+  polymerLogo: require("./logos/polymer-logo-huge.png"),
+  reactLogo: require("./logos/react-logo-huge.png")
 };
 
 preloader([images.city, images.kat]);
@@ -72,7 +73,19 @@ export default class extends React.Component {
           bgColor="primary"
           notes={SlideNotes.brickTemplateExample}
         >
-          <Text textAlign="left" textSize={15} bold>Brick Template:</Text>
+          <Text textAlign="left" textSize={15} bold>Brick v1 Component:</Text>
+          <CodePane
+            lang="html"
+            source={require("raw!./snippets/hello-x-tag.html")}
+            margin="0 auto"/>
+        </Slide>
+
+        <Slide
+          transition={["zoom", "fade"]}
+          bgColor="primary"
+          notes={SlideNotes.brickTemplateExample2}
+        >
+          <Text textAlign="left" textSize={15} bold>Brick v2 Component Template:</Text>
           <CodePane
             lang="html"
             source={require("raw!./snippets/brick-button.html")}
@@ -82,7 +95,7 @@ export default class extends React.Component {
         <Slide
           transition={["zoom", "fade"]}
           bgColor="primary"
-          notes={SlideNotes.brickCodeExample}
+          notes={SlideNotes.brickCodeExample2}
         >
           <Text textAlign="left" textSize={15} bold>Brick Component Behavior:</Text>
           <CodePane
@@ -120,62 +133,70 @@ export default class extends React.Component {
         </Slide>
 
         <Slide
+          transition={["spin", "fade"]}
+          bgColor="secondary"
+          bgImage={images.reactLogo.replace("/", "")}
+          notes={SlideNotes.reactOverview}
+        >
+          <Text>Slide on Facebook React</Text>
+        </Slide>
+
+        <Slide
           transition={["zoom", "fade"]}
           bgColor="primary"
-          notes="Polymer Example"
+          notes="Evolution"
         >
-          <Appear fid="6">
+          <Appear fid="e1">
             <Layout>
               <Fill>
-                <Text textAlign="left" bgColor="white" margin={10}>One</Text>
-              </Fill>
-              <Fill>
-                <Text bgColor="white" margin={10}>Two</Text>
-              </Fill>
-              <Fill>
-                <Text textAlign="right" bgColor="white" margin={10}>Three</Text>
+                <Text bgColor="white" margin={10}>Web Components</Text>
               </Fill>
             </Layout>
           </Appear>
-          <Appear fid="5">
+          <Appear fid="e2">
             <Layout>
               <Fill>
-                <Text bgColor="white" margin={10}>Four</Text>
+                <Text bgColor="white" margin={10}>Brick</Text>
               </Fill>
               <Fill>
-                <Text bgColor="white" margin={10}>Five</Text>
+                <Text bgColor="white" margin={10}>Polymer</Text>
               </Fill>
             </Layout>
           </Appear>
           <Layout>
             <Fill>
-              <Appear fid="4">
-                <Text bgColor="white" margin={10}>Six</Text>
+              <Appear fid="e3">
+                <Text bgColor="white" margin={10}>Blaze</Text>
               </Appear>
             </Fill>
             <Fill>
-              <Appear fid="3">
-                <Text bgColor="white" margin={10}>Seven</Text>
+              <Appear fid="e4">
+                <Text bgColor="white" margin={10}>React</Text>
               </Appear>
             </Fill>
             <Fill>
-              <Appear fid="2">
-                <Text bgColor="white" margin={10}>Eight</Text>
+              <Appear fid="e5">
+                <Text bgColor="white" margin={10}>Angular 2</Text>
               </Appear>
             </Fill>
             <Fill>
-              <Appear fid="1">
-                <Text bgColor="white" margin={10}>Nine</Text>
+              <Appear fid="e6">
+                <Text bgColor="white" margin={10}>Foo</Text>
               </Appear>
             </Fill>
           </Layout>
-          <Appear fid="7">
-            <Layout>
-              <Fill>
-                <Text bgColor="white" margin={10}>Ten</Text>
-              </Fill>
-            </Layout>
-          </Appear>
+          <Layout>
+            <Fill>
+              <Appear fid="e7">
+                <Text textAlign="left" bgColor="white" margin={10}>Microsoft Edge/Universal?</Text>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="e8">
+                <Text bgColor="white" margin={10}>Apple Safari?</Text>
+              </Appear>
+            </Fill>
+          </Layout>
         </Slide>
 
         <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
@@ -214,12 +235,12 @@ export default class extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <List>
-            <ListItem><Appear fid="1">Inline style based theme system</Appear></ListItem>
-            <ListItem><Appear fid="2">Autofit text</Appear></ListItem>
-            <ListItem><Appear fid="3">Flexbox layout system</Appear></ListItem>
-            <ListItem><Appear fid="4">React-Router navigation</Appear></ListItem>
-            <ListItem><Appear fid="5">PDF export</Appear></ListItem>
-            <ListItem><Appear fid="6">And...</Appear></ListItem>
+            <ListItem><Appear fid="s1">Inline style based theme system</Appear></ListItem>
+            <ListItem><Appear fid="s2">Autofit text</Appear></ListItem>
+            <ListItem><Appear fid="s3">Flexbox layout system</Appear></ListItem>
+            <ListItem><Appear fid="s4">React-Router navigation</Appear></ListItem>
+            <ListItem><Appear fid="s5">PDF export</Appear></ListItem>
+            <ListItem><Appear fid="s6">And...</Appear></ListItem>
           </List>
         </Slide>
 
