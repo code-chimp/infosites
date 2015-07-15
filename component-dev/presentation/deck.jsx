@@ -17,12 +17,13 @@ const images = {
   doge: require("./Doge.png"),
   cyborg: require("./cyborg-ape.png"),
   webcomponentsLogo: require("./logos/webcomponents-logo-huge.png"),
+  webcomponentsLogoSvg: require("./logos/webcomponents-logo.svg"),
   brickLogo: require("./logos/brick-logo-huge.png"),
   polymerLogo: require("./logos/polymer-logo-huge.png"),
   reactLogo: require("./logos/react-logo-huge.png")
 };
 
-preloader([images.city, images.kat, images.doge, images.cyborg]);
+preloader([images.city, images.kat, images.doge, images.cyborg, images.webcomponentsLogoSvg]);
 
 export default class extends React.Component {
   render() {
@@ -64,7 +65,7 @@ export default class extends React.Component {
         <Slide
           transition={["spin"]}
           bgColor="secondary"
-          bgImage={images.webcomponentsLogo.replace("/", "")}
+          bgImage={images.webcomponentsLogoSvg.replace("/", "")}
           notes={SlideNotes.alexRussell}
         >
           <Heading size={2} fit caps textColor="white">
