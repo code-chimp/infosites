@@ -3,5 +3,9 @@ var gulpSequence = require('gulp-sequence');
 
 gulp.task('build:prod', function (cb) {
   process.env.NODE_ENV = 'production';
-  gulpSequence('clean', ['images'], ['sass'], cb);
+  gulpSequence(
+    'clean',
+    ['statics', 'fonts', 'images'],
+    ['sass', 'webpack', 'html'],
+    'rev', cb);
 });
