@@ -1,0 +1,21 @@
+#about {
+  @include outer-container;
+
+  article {
+    @include span-columns(8);
+  }
+
+  aside {
+    @include span-columns(3);
+    //@include omega();
+  }
+
+  .contact-info {
+    @include span-columns(6);
+  }
+
+  .resume {
+    @include span-columns(5);
+
+  }
+}

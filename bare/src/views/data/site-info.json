@@ -1,0 +1,53 @@
+{
+  "description": "",
+  "menus": [
+    {
+      "label": "Decks",
+      "menus": [
+        {
+          "label": "Component Talk",
+          "url": "http://conponent-dev.code-chimp.info"
+        },
+        {
+          "label": "Foo Talk",
+          "menus": [
+          {
+            "label": "Deck",
+            "icon": "fa-caret-square-o-right",
+            "url": "http://test.code-chimp.info"
+          },
+          {
+            "label": "Repository",
+            "icon": "fa-github",
+            "url": "https://github.com/code-chimp/infosites"
+          }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Resources",
+      "url": "resources.html"
+    },
+    {
+      "label": "Blog",
+      "url": "http://ghost.code-chimp.com"
+    },
+    {
+      "label": "About/Contact",
+      "url": "about.html"
+    }
+  ],
+  "decks": [
+    {
+      "title": "",
+      "short-title": "",
+      "url": "",
+      "repository": "https://github.com/code-chimp/foo",
+      "published": "",
+      "blurb": "",
+      "description": "",
+      "icon": ""
+    }
+  ]
+}
