@@ -8,6 +8,7 @@ installing docker
 installing hhvm
 installing mariadb client
 editing /etc/hosts
+change default site for mybox.local
 setting up sites-available for app
 
 // END TODO
@@ -54,10 +55,12 @@ $table_prefix = 'hh_';
 
 
 
+sudo ln -s /etc/nginx/sites-available/wp-config /etc/nginx/sites-enabled/wp-config
+sudo service nginx reload
 
 
+http://wp.mybox.local/wp-admin/install.php
 
-http://mybox.local/wp-admin/install.php
-
-
-??? profit ???
+Follow the 5-minute install instructions starting at <section tbd>
+???
+profit
