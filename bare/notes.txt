@@ -1,0 +1,63 @@
+HHVM+Nginx+Dockerized MariaDB
+
+// TODO
+
+minimum tooling ie: wget, software props, etc
+installing nginx
+installing docker
+installing hhvm
+installing mariadb client
+editing /etc/hosts
+setting up sites-available for app
+
+// END TODO
+
+
+Dockerized MariaDB:
+-- named container for easy restart
+docker run -d --name <container name> -p 127.0.0.1:<local port>:3306 -e MYSQL_ROOT_PASSWORD=<mysecretpassword> mariadb
+--confirm
+docker ps -a
+
+-- set us up the db
+mysql -h 127.0.0.1 -P <local port> -u root -p
+mysql> create database <db name> collate utf8_general_ci;
+mysql> grant all on <db name>.* to '<admin user>'@'%' identified by '<sekrit pass>';
+mysql> flush privileges;
+mysql> \q
+
+Wordpress:
+cd ~/sites
+wget https://api.wordpress.org/secret-key/1.1/salt/ -O salts.txt
+wget https://wordpress.org/latest.tar.gz
+tar xvzf latest.tar.gz
+cp wordpress/wp-config-sample.php wordpress/wp-config.php
+cat salts.txt >> wordpress/wp-config.php
+rm salts.txt
+rm latest.tar.gz
+
+cd wordpress
+touch .hhconfig
+
+--edit wp-config.php:
+
+define('DB_NAME', '<db name>');
+define('DB_USER', '<admin user>');
+define('DB_PASSWORD', '<sekrit pass>');
+define('DB_HOST', '127.0.0.1:<local port>');
+define('DB_COLLATE', 'utf8_general_ci');
+
+$table_prefix = 'hh_';
+
+-->> move salts to correct place
+
+
+
+
+
+
+
+http://mybox.local/wp-admin/install.php
+
+
+??? profit ???
