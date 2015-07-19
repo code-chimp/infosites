@@ -1,10 +1,14 @@
   <!DOCTYPE html>
   <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %} :: code chimp</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link type="text/plain" rel="author" href="http://code-chimp.info/humans.txt" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}{{titleSeparator}}{{siteName}}</title>
+    <meta name="description" content="{{description}}">
+    {% if keywords %}<meta name="keywords" content="{{keywords}}">{% endif %}
+    {% if author %}<meta name="author" content="{{author}}">{% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if humansTxt %}<link type="text/plain" rel="author" href="/humans.txt">{% endif %}
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -22,6 +26,7 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body id="{% block pageId %}{% endblock %}">
 
@@ -29,5 +34,15 @@
 
   <script src="js/shared.js"></script>
   <script src="js/main.js"></script>
+  {% if googleAnalytics %}
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','{{googleAnalyticsId}}','auto');ga('send','pageview');
+  </script>
+  {% endif %}
 </body>
 </html>

@@ -1,43 +1,13 @@
 {
-  "description": "",
-  "menus": [
-    {
-      "label": "Decks",
-      "menus": [
-        {
-          "label": "Component Talk",
-          "url": "http://conponent-dev.code-chimp.info"
-        },
-        {
-          "label": "Foo Talk",
-          "menus": [
-          {
-            "label": "Deck",
-            "icon": "fa-caret-square-o-right",
-            "url": "http://test.code-chimp.info"
-          },
-          {
-            "label": "Repository",
-            "icon": "fa-github",
-            "url": "https://github.com/code-chimp/infosites"
-          }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Resources",
-      "url": "resources.html"
-    },
-    {
-      "label": "Blog",
-      "url": "http://ghost.code-chimp.com"
-    },
-    {
-      "label": "About/Contact",
-      "url": "about.html"
-    }
-  ],
+  "siteName": "code chimp",
+  "titleSeparator": " :: ",
+  "description": "My spot to link to presentation slide decks and anything else I fund of interest",
+  "keywords": "react,docker,presentations,gulp,nodejs,reactjs",
+  "author": "Tim Goshinski",
+  "humansTxt": true,
+  "copyrightStart": 2015,
+  "googleAnalytics": false,
+  "googleAnalyticsId": "UA-XXXXX-X",
   "decks": [
     {
       "title": "",
