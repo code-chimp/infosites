@@ -4,7 +4,7 @@ var config = require('../config');
 
 gulp.task('clean', function (cb) {
   del([
-    config.distDirectory + '/{css,img,js}',
-    config.distDirectory + '/**/*.{html,txt,ico}'
+    config.distDirectory + '/{css,img,js,fonts}',
+    config.distDirectory + '/**/*.{html,txt,ico,png,json,xml}'
   ], cb);
 });

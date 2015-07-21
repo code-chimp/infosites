@@ -6,18 +6,21 @@ var webpackManifest = require('../lib/webpack-manifest');
 module.exports = function (env) {
   var jsSrc = path.resolve(paths.sourceAssets + '/js/');
   var jsDest = paths.distDirectory + '/js/';
-  var distPath = 'js/';
+  var publicPath = 'js/';
 
   var webpackConfig = {
     context: jsSrc,
     plugins: [],
     resolve: {
-      extensions: ['', 'js']
+      extensions: ['', '.js', '.jsx'],
+      alias: {
+        jquery: 'jquery/dist/jquery'
+      }
     },
     module: {
       loaders: [
         {
-          test: /\.js$/,
+          test: /(\.js$)|(\.jsx$)/,
           loader: 'babel-loader?stage=1',
           exclude: /node-modules/
         }
@@ -28,20 +31,33 @@ module.exports = function (env) {
   if (env !== 'test') {
     // Karma doesn't need entry points or output settings
     webpackConfig.entry = {
-      main: ['./main.js']
+      main: './main.js',
+      vendor: ['jquery', 'lodash']
     };
 
     webpackConfig.output = {
       path: jsDest,
       filename: env === 'prod' ? '[name]-[hash].js' : '[name].js',
-      publicPath: distPath
+      publicPath: publicPath
     };
 
     // vendor dependencies into shared.js
     webpackConfig.plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'shared',
+        name: 'vendor',
         filename: env === 'prod' ? '[name]-[hash].js' : '[name].js'
+      })
+    );
+
+    webpackConfig.plugins.push(
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'root.jQuery': 'jquery',
+        _: 'lodash',
+        'window._': 'lodash',
+        'root._': 'lodash'
       })
     );
   }

@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/code-chimp/infosite#readme",
   "dependencies": {
+    "jquery": "^2.1.4",
     "lodash": "^3.10.0"
   },
   "devDependencies": {

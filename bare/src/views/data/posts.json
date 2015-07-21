@@ -1,3 +1,21 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "Sample Post",
+      "shortTitle": "Sample Post",
+      "url": "http://ghost.code-chimp.com",
+      "repository": "https://github.com/code-chimp/infosites",
+      "published": "2015-07-21",
+      "description": "I really need to get off me arse and write something useful",
+      "icon": ""
+    },
+    {
+      "title": "Another Post",
+      "shortTitle": "Another Post",
+      "url": "http://ghost.code-chimp.com",
+      "published": "2015-07-11",
+      "description": "I really need to get off me arse and write something useful",
+      "icon": ""
+    }
+  ]
 }

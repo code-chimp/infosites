@@ -13,16 +13,6 @@ var siteInfo = JSON.parse(fs.readFileSync(config.siteInfo));
 var decksInfo = JSON.parse(fs.readFileSync(config.decksInfo));
 var postsInfo = JSON.parse(fs.readFileSync(config.postsInfo));
 
-/*console.log(JSON.stringify(siteInfo));
-console.log('');
-console.log(JSON.stringify(decksInfo));
-console.log('');
-console.log(JSON.stringify(postsInfo));
-console.log('');
-var foo = assign(siteInfo, decksInfo, postsInfo);
-console.log(JSON.stringify(foo));
-console.log('');*/
-
 // create a nicely formatted copyright
 var copyrightStart = siteInfo.copyrightStart;
 var currentYear = new Date().getFullYear();
@@ -34,15 +24,10 @@ if (currentYear > copyrightStart) {
 
 siteInfo.copyrightLine = copyrightLine;
 
-// merge page specific data with the general site data
+// merge page specific data with the general site data and custom data files
 var getPageData = function (file) {
   var pageInfo = JSON.parse(
     fs.readFileSync(config.dataDirectory + path.basename(file.path) + '.json'));
-
-  console.log(JSON.stringify(file.path));
-  console.log('');
-  console.log(JSON.stringify(pageInfo));
-  console.log('');
 
   var pageData = assign(siteInfo, decksInfo, postsInfo, pageInfo);
 
