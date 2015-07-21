@@ -1,36 +1,99 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %}{{titleSeparator}}{{siteName}}</title>
-    <meta name="description" content="{{description}}">
-    {% if keywords %}<meta name="keywords" content="{{keywords}}">{% endif %}
-    {% if author %}<meta name="author" content="{{author}}">{% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if humansTxt %}<link type="text/plain" rel="author" href="/humans.txt">{% endif %}
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body id="{% block pageId %}{% endblock %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{page.title}}{{titleSeparator}}{{siteName}}</title>
+  <meta name="description" content="{{description}}">
+  {% if keywords %}<meta name="keywords" content="{{keywords}}">{% endif %}
+  {% if author %}<meta name="author" content="{{author}}">{% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if humansTxt %}<link type="text/plain" rel="author" href="/humans.txt">{% endif %}
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  {#
+  <header class="centered-navigation" role="banner">
+    <div class="centered-navigation-wrapper">
+      <a href="javascript:void(0)" class="mobile-logo">
+        <img src="img/logo-ape.png" alt="Logo image">
+      </a>
+      <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+      <nav role="navigation">
+        <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+          <li class="nav-link"><a href="about.html">About Me</a></li>
+          <li class="nav-link"><a href="contact.html">Contact</a></li>
+          <li class="nav-link logo">
+            <a href="/" class="logo">
+              <img src="img/logo-ape.png" alt="code-chimp logo">
+            </a>
+          </li>
+          <li class="nav-link"><a href="javascript:void(0)">Magic Beans</a></li>
+          <li class="nav-link more"><a href="javascript:void(0)">Decks</a>
+            <ul class="submenu">
+              <li><a href="http://component-dev.code-chimp.info">Component Based Development</a></li>
+              <li class="more"><a href="javascript:void(0)">Talk on Foo</a>
+                <ul class="submenu">
+                  <li><a href="javascript:void(0)"><i class="fa fa-caret-square-o-right fa-fw"></i> Slide Deck</a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-github fa-fw"></i> Repository</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  {% block pageContent %}{% endblock %}
+  <br>
+  #}
+  {% include "shared/page-header.html" %}
+
+  {% block body %}{% endblock %}
+
+  <footer class="footer" role="contentinfo">
+    {#
+    <div class="footer-logo">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+    </div>
+    #}
+    <div class="footer-links">
+      <ul>
+        <li><h3>Content</h3></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul></ul>
+      <ul>
+        <li><h3>Follow Me</h3></li>
+        <li><a href="https://twitter.com/code_chimp"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/tgoshinski"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://github.com/code-chimp"><i class="fa fa-fw fa-github-alt"></i> Github</a></li>
+        <li><a href="https://plus.google.com/+TimothyGoshinski/"><i class="fa fa-fw fa-google-plus-square"></i> google+</a></li>
+        <li><a href="http://ghost.code-chimp.com"><i class="fa fa-fw fa-bullhorn"></i> Blog</a></li>
+      </ul>
+    </div>
+    <hr>
+    <p>Lovingly hand-crafted by a knuckle-dragging keyboard ape. &copy; {{copyrightLine}}</p>
+  </footer>
 
   <script src="js/shared.js"></script>
   <script src="js/main.js"></script>

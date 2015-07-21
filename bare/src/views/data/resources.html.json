@@ -1,0 +1,14 @@
+{
+  "page": {
+    "id": "resources",
+    "title": "Resources",
+    "sections": [
+      {
+        "name": "Blogs"
+      },
+      {
+        "name": "Podcasts"
+      }
+    ]
+  }
+}

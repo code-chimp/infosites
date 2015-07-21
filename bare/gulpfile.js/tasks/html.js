@@ -10,6 +10,18 @@ var browserSync = require('browser-sync');
 var config = require('../config/html');
 var handleErrors = require('../lib/handle-errors');
 var siteInfo = JSON.parse(fs.readFileSync(config.siteInfo));
+var decksInfo = JSON.parse(fs.readFileSync(config.decksInfo));
+var postsInfo = JSON.parse(fs.readFileSync(config.postsInfo));
+
+/*console.log(JSON.stringify(siteInfo));
+console.log('');
+console.log(JSON.stringify(decksInfo));
+console.log('');
+console.log(JSON.stringify(postsInfo));
+console.log('');
+var foo = assign(siteInfo, decksInfo, postsInfo);
+console.log(JSON.stringify(foo));
+console.log('');*/
 
 // create a nicely formatted copyright
 var copyrightStart = siteInfo.copyrightStart;
@@ -26,7 +38,13 @@ siteInfo.copyrightLine = copyrightLine;
 var getPageData = function (file) {
   var pageInfo = JSON.parse(
     fs.readFileSync(config.dataDirectory + path.basename(file.path) + '.json'));
-  var pageData = assign(siteInfo, pageInfo);
+
+  console.log(JSON.stringify(file.path));
+  console.log('');
+  console.log(JSON.stringify(pageInfo));
+  console.log('');
+
+  var pageData = assign(siteInfo, decksInfo, postsInfo, pageInfo);
 
   return pageData;
 };

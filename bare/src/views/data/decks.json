@@ -1,0 +1,23 @@
+{
+  "decks": [
+    {
+      "title": "Component Based Development",
+      "short-title": "Component Dev",
+      "url": "http://component-dev.code-chimp.info",
+      "published": "2015-07-25",
+      "blurb": "",
+      "description": "",
+      "icon": ""
+    },
+    {
+      "title": "Test",
+      "short-title": "Test",
+      "url": "http://test.code-chimp.info",
+      "repository": "https://github.com/code-chimp/infosites",
+      "published": "",
+      "blurb": "",
+      "description": "",
+      "icon": ""
+    }
+  ]
+}

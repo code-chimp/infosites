@@ -7,17 +7,5 @@
   "humansTxt": true,
   "copyrightStart": 2015,
   "googleAnalytics": false,
-  "googleAnalyticsId": "UA-XXXXX-X",
-  "decks": [
-    {
-      "title": "",
-      "short-title": "",
-      "url": "",
-      "repository": "https://github.com/code-chimp/foo",
-      "published": "",
-      "blurb": "",
-      "description": "",
-      "icon": ""
-    }
-  ]
+  "googleAnalyticsId": "UA-XXXXX-X"
 }
