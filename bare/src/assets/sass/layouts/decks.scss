@@ -1,0 +1,13 @@
+#decks-page {
+  @include outer-container;
+
+  & > header {
+    @include span-columns(12);
+
+    h1 {
+      text-align: center;
+      margin-top: 1em;
+      font-size: larger;
+    }
+  }
+}

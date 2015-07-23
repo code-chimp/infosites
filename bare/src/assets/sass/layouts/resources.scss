@@ -1,11 +1,6 @@
 #resource-page {
   @include outer-container;
 
-  // & > header {
-  //   @include span-columns(12);
-  //   h1 { text-align: center; }
-  // }
-
   & > header {
     @include fill-parent();
     @include row(table);
@@ -15,23 +10,6 @@
       font-size: larger;
     }
   }
-
-  // section {
-  //   @include outer-container;
-
-  //   & > header{
-  //     @include span-columns(12);
-  //     & > h1 { text-decoration: underline; }
-  //   }
-
-  //   article {
-  //     @include span-columns(12);
-  //     header {
-  //       @include span-columns(3 of 12);
-  //     }
-  //     p { @include span-columns(9 of 12); }
-  //   }
-  // }
 
   section {
     @include fill-parent();
