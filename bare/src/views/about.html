@@ -1,49 +1,66 @@
 {% extends "layouts/page.html" %}
 
 {% block body %}
-<section id="about">
-  <article>
-    <p>
-      Hello, my name is Tim Goshinski and I live in <span title="Midwestern United States aka 'Flyover Country'">Omaha, Nebraska</span>
-      with my lovely wife and amazing daughter.
-    </p>
-    <p>
-      I work primarily with .NET web applications, but I fancy myself to be more of a
-      polyglot than I most likely am. I&#39;m not saying that I have been at this for a long time, but
-      when I started out the term &#34;pair programming&#34; meant that I was tasked with writing
-      our code in cuneiform on wet clay tablets while my partner warmed up the vacuum tubes in his armpits.
-      Ah, heady days those.
-    </p>
-    <p class="signature">
-      Boomshanka!<br />
-      Tim
-    </p>
-    <p class="pageQuote">
-      <q>You don&#39;t like constantly learning new things? Son, you picked the wrong profession.</q><br />
-      <small>me</small>
-    </p>
-  </article>
-  <aside>
-    <img src="img/cyborg-ape.png" alt="my mug">
-  </aside>
+<div id="about-page">
+  <header>
+    <h1>About Myself</h1>
+  </header>
 
-  <div class="contact-info">
-    <p>
-      Email: <a href="mailto:tim@code-chimp.com" title="My Email">tim [at] code-chimp.com</a>
-      <br />
-      Phone: +01.402.577.0531
-    </p>
-  </div>
+  <section>
+    <div class="bio">
+      <p>
+        Hello, my name is Tim Goshinski and I live in <span title="Midwestern United States aka 'Flyover Country'">Omaha, Nebraska</span>
+        with my lovely wife and amazing daughter.
+      </p>
+      <p>
+        I work primarily with front end JavaScript and .NET web applications, but I fancy myself to be more of a
+        polyglot than I most likely am. I&#39;m not saying that I have been at this for a long time, but
+        when I started out the term &#34;pair programming&#34; meant that I was tasked with writing
+        our code in cuneiform on wet clay tablets while my partner warmed up the vacuum tubes in his armpits
+        - ah, heady days those.
+      </p>
+      <p class="signature">
+        Boomshanka!<br />
+        Tim
+      </p>
+    </div>
+    <div class="picture">
+      <picture>
+        <source srcset="img/sub/headshot-sm.png">
+        <img src="img/sub/headshot-sm.png" alt="my mug" title="if this were scratch-and-sniff it would smell of Aqua-Velva">
+      </picture>
+    </div>
+  </section>
 
-  <div class="resume">
-    Resume:
-    <a href="http://dl.dropbox.com/u/984786/goshinski_resume.doc">
-      <i class="fa fa-file-word-o" title="Resume in MSWord"></i> MSWord
-    </a>
-    &#160;
-    <a href="http://dl.dropbox.com/u/984786/goshinski_resume.pdf">
-      <i class="fa fa-file-pdf-o" title="Resume in LaTeX generated PDF"></i> PDF
-    </a>
-  </div>
+  <section>
+    <div class="pullquote">
+      <blockquote>
+        <q>You don&#39;t like constantly learning new things? Son, you picked the wrong profession.</q>
+        <cite>- me</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section>
+    <div class="contact-info">
+      <p>
+        Email: <a href="mailto:tim@code-chimp.com" title="My Email">tim [at] code-chimp.com</a>
+        <br />
+        Phone: +01.402.577.0531
+      </p>
+    </div>
+    <div class="resume">
+      Resume:
+      <a href="http://dl.dropbox.com/u/984786/goshinski_resume.doc">
+        <i class="fa fa-file-word-o" title="Resume in MSWord"></i> MSWord
+      </a>
+      &#160;
+      <a href="http://dl.dropbox.com/u/984786/goshinski_resume.pdf">
+        <i class="fa fa-file-pdf-o" title="Resume in LaTeX generated PDF"></i> PDF
+      </a>
+    </div>
+  </section>
+  {#
+  #}
 </div>
 {% endblock %}

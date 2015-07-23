@@ -30,7 +30,7 @@ var getPageData = function (file) {
     fs.readFileSync(config.dataDirectory + path.basename(file.path) + '.json'));
 
   var pageData = assign(siteInfo, decksInfo, postsInfo, pageInfo);
-
+  // console.log(JSON.stringify(pageData));
   return pageData;
 };
 

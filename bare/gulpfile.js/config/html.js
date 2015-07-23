@@ -1,7 +1,7 @@
 var config = require('./');
 
 module.exports = {
-  watch: config.sourceDirectory + '/views/**/*.html',
+  watch: [config.sourceDirectory + '/views/**/*.html', config.sourceDirectory + '/views/data/**/*.json'],
   src: [config.sourceDirectory + '/views/**/*.html', '!**/{layouts,shared}/**'],
   dest: config.distDirectory,
   dataDirectory: config.sourceDirectory + '/views/data/',

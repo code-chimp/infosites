@@ -4,10 +4,53 @@
     "title": "Resources",
     "sections": [
       {
-        "name": "Blogs"
+        "name": "Blogs",
+        "resources": [
+          {
+            "title": "Simple Programmer",
+            "subtitle": "Making the complex simple",
+            "url": "http://simpleprogrammer.com/",
+            "description": "John Sonmez's blog on a variety of programming topics"
+          },
+          {
+            "title": "Wes Bos",
+            "url": "http://wesbos.com/",
+            "description": "Wes Bos makes some awesome tutorials"
+          }
+        ]
       },
       {
-        "name": "Podcasts"
+        "name": "Podcasts",
+        "resources": [
+          {
+            "title": "Entreprogrammers",
+            "subtitle": "The podcast for Developerneurs",
+            "url": "http://entreprogrammers.com/",
+            "description": "Josh Earl, John Sonmez, Derick Bailey and Max Wood's master group discussing being developer entrepreneurs."
+          },
+          {
+            "title": "The Hanselminutes Podcast",
+            "subtitle": "Fresh Air for Developers",
+            "url": "http://hanselminutes.com/",
+            "description": "Scott Hanselman and guests discuss .NET, open source, and programming in general."
+          }
+        ]
+      },
+      {
+        "name": "News",
+        "resources": [
+          {
+            "title": "Hacker News",
+            "url": "https://news.ycombinator.com/",
+            "description": "My first stop in checking out current hot topics for developers - heavy focus on topics related to startup culture"
+          },
+          {
+            "title": "crater.io",
+            "subtitle": "Where Meteor News Lands",
+            "url": "https://crater.io/new",
+            "description": "Josh Owen's news site focused on happenings in the Meteor community"
+          }
+        ]
       }
     ]
   }

@@ -1,5 +1,28 @@
 {% extends "layouts/page.html" %}
 
 {% block body %}
-  <h1>Resources</h1>
+<div id="resource-page">
+  <header>
+    <h1>Resources</h1>
+  </header>
+  {% for section in page.sections %}
+  <section>
+    <header>
+      <h1>{{section.name}}</h1>
+    </header>
+    {% for resource in section.resources %}
+    <article>
+      <header>
+        <a href="{{resource.url}}" aria-label="{{section.name}} - {{resource.title}}">
+        <h1>{{resource.title}}</h1>
+        {%if resource.subtitle %}<h2>{{resource.subtitle}}</h2>{% endif %}
+        </a>
+      </header>
+      <p>{{resource.description}}
+    </article>
+    <hr>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</div>
 {% endblock %}
