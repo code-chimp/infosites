@@ -1,6 +1,6 @@
-var notify = require("gulp-notify");
+var notify = require('gulp-notify');
 
-module.exports = function(errorObject, callback) {
+module.exports = function (errorObject, callback) {
   notify.onError(
     errorObject.toString()
       .split(': ')

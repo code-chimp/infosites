@@ -1,0 +1,53 @@
+var path = require('path');
+var paths = require('./');
+var webpack = require('webpack');
+var webpackManifest = require('../lib/webpack-manifest');
+
+var jsSrc = path.resolve(paths.sourceAssets + '/js/');
+var jsDest = paths.distDirectory + '/Scripts/';
+var publicPath = 'assets/js/';
+
+var webpackConfig = {
+  context: jsSrc,
+  entry: {
+    app: './app.jsx',
+    vendor: ['jquery', 'lodash']
+  },
+  output: {
+    path: jsDest,
+    filename: 'app.js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      jquery: 'jquery/dist/jquery'
+    }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'root.jQuery': 'jquery',
+      _: 'lodash',
+      'window._': 'lodash',
+      'root._': 'lodash'
+    })
+  ],
+  module: {
+    loaders: [
+      {
+        test: /(\.js$)|(\.jsx$)/,
+        loaders: [
+          'babel-loader?stage=1'
+        ],
+        exclude: /node-modules/
+      }
+    ]
+  },
+  debug: true,
+  devtool: 'source-map'
+};
+
+module.exports = webpackConfig;

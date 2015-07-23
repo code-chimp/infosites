@@ -42,6 +42,7 @@ module.exports = function (env) {
     };
 
     // vendor dependencies into shared.js
+    // jscs:disable
     webpackConfig.plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
@@ -56,14 +57,17 @@ module.exports = function (env) {
         'window.jQuery': 'jquery',
         'root.jQuery': 'jquery',
         _: 'lodash',
+        underscore: 'lodash',
         'window._': 'lodash',
         'root._': 'lodash'
       })
     );
+    // jscs:enable
   }
 
   switch (env) {
     case 'prod':
+      // jscs:disable
       webpackConfig.plugins.push(
         new webpackMainfest(distPath, 'dist'),
         new webpack.DefinePlugin({
@@ -75,6 +79,7 @@ module.exports = function (env) {
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.NoErrorsPlugin()
       );
+      // jscs:enable
       break;
 
     case 'dev':
