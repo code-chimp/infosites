@@ -1,3 +1,4 @@
+'use strict';
 var normalizePath = require('node-normalize-scss').includePaths;
 var config = require('./');
 

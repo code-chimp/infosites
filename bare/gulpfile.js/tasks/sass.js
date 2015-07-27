@@ -1,10 +1,11 @@
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var sourcemaps   = require('gulp-sourcemaps');
+'use strict';
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync  = require('browser-sync');
+var browserSync = require('browser-sync');
 var handleErrors = require('../lib/handle-errors');
-var config       = require('../config/sass');
+var config = require('../config/sass');
 
 gulp.task('sass', function () {
   return gulp.src(config.src)
@@ -14,5 +15,5 @@ gulp.task('sass', function () {
     .pipe(autoprefixer(config.autoprefixer))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.dest))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({stream: true}));
 });

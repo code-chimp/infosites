@@ -1,3 +1,4 @@
+'use strict';
 var fs = require('fs');
 var path = require('path');
 
@@ -6,7 +7,7 @@ module.exports = function (publicPath, dest, filename) {
 
   return function () {
     this.plugin('done', function (stats) {
-      var stats = stats.toJson();
+      stats = stats.toJson();
       var chunks = stats.assetsByChunkName;
       var manifest = {};
 
@@ -20,4 +21,4 @@ module.exports = function (publicPath, dest, filename) {
       );
     });
   };
-}
+};

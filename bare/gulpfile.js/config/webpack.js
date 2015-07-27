@@ -1,3 +1,4 @@
+'use strict';
 var path = require('path');
 var paths = require('./');
 var webpack = require('webpack');
@@ -42,6 +43,7 @@ module.exports = function (env) {
     };
 
     // vendor dependencies into shared.js
+    /* eslint-disable new-cap */
     // jscs:disable
     webpackConfig.plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
@@ -63,9 +65,11 @@ module.exports = function (env) {
       })
     );
     // jscs:enable
+    /* eslint-enable new-cap */
   }
 
   if (env === 'prod') {
+    /* eslint-disable new-cap */
     // jscs:disable
     webpackConfig.plugins.push(
       new webpackManifest(publicPath, 'dist'),
@@ -79,6 +83,7 @@ module.exports = function (env) {
       new webpack.NoErrorsPlugin()
     );
     // jscs:enable
+    /* eslint-enable new-cap */
   }
 
   if (env === 'dev') {
@@ -87,4 +92,4 @@ module.exports = function (env) {
   }
 
   return webpackConfig;
-}
+};
