@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var rev = require('gulp-rev');
 var revNapkin = require('gulp-rev-napkin');
+var minify = require('gulp-minify-css');
 var config = require('../../config');
 
 gulp.task('rev-css', ['rev-update-references'], function () {
