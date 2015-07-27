@@ -6,6 +6,6 @@ gulp.task('build:dev', function (cb) {
     'clean',
     ['lint'],
     ['statics', 'fonts', 'images'],
-    ['sass', 'webpack', 'html'],
+    ['sass', 'webpack:dev', 'html'],
     ['watch', 'browserSync'], cb);
 });

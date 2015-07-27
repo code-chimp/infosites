@@ -37,7 +37,7 @@ module.exports = function (env) {
 
     webpackConfig.output = {
       path: jsDest,
-      filename: env === 'prod' ? '[name]-[hash].js' : '[name].js',
+      filename: process.env.NODE_ENV === 'production' ? '[name]-[hash].js' : '[name].js',
       publicPath: publicPath
     };
 
@@ -46,7 +46,7 @@ module.exports = function (env) {
     webpackConfig.plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
-        filename: env === 'prod' ? '[name]-[hash].js' : '[name].js'
+        filename: process.env.NODE_ENV === 'production' ? '[name]-[hash].js' : '[name].js'
       })
     );
 
@@ -65,26 +65,25 @@ module.exports = function (env) {
     // jscs:enable
   }
 
-  switch (env) {
-    case 'prod':
-      // jscs:disable
-      webpackConfig.plugins.push(
-        new webpackMainfest(distPath, 'dist'),
-        new webpack.DefinePlugin({
-          'process-env': {
-            'NODE_ENV': JSON.stringify('production')
-          }
-        }),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.NoErrorsPlugin()
-      );
-      // jscs:enable
-      break;
+  if (env === 'prod') {
+    // jscs:disable
+    webpackConfig.plugins.push(
+      new webpackManifest(publicPath, 'dist'),
+      new webpack.DefinePlugin({
+        'process-env': {
+          'NODE_ENV': JSON.stringify('production')
+        }
+      }),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.NoErrorsPlugin()
+    );
+    // jscs:enable
+  }
 
-    case 'dev':
-      webpackConfig.devtool = 'source-map';
-      webpack.debug = true;
+  if (env === 'dev') {
+    webpackConfig.devtool = 'source-map';
+    webpack.debug = true;
   }
 
   return webpackConfig;
