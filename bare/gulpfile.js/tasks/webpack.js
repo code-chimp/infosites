@@ -1,9 +1,9 @@
+'use strict';
 var env = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
 
 var gulp = require('gulp');
 var webpack = require('webpack');
 var browserSync = require('browser-sync');
-var assign = require('object-assign');
 var logger = require('../lib/compile-logger');
 var config = require('../config/webpack')(env);
 
@@ -25,6 +25,6 @@ gulp.task('webpack', function (cb) {
         built = true;
         cb();
       }
-    })
+    });
   }
 });

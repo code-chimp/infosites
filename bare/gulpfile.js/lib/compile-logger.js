@@ -1,3 +1,4 @@
+'use strict';
 var gutil = require('gulp-util');
 var prettifyTime = require('./prettify-time');
 var handleErrors = require('./handle-errors');

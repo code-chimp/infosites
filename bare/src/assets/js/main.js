@@ -1,3 +1,5 @@
+'use strict';
+
 $(document).ready(function () {
   var menuSelector = '#js-navigation-menu';
   var mobileMenuSelector = '#js-mobile-menu';

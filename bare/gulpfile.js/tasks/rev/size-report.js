@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 var sizereport = require('gulp-sizereport');
 var config = require('../../config');

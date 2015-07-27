@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 var rev = require('gulp-rev');
 var revNapkin = require('gulp-rev-napkin');

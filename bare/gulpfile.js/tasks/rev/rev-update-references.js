@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 var revReplace = require('gulp-rev-replace');
 var config = require('../../config');

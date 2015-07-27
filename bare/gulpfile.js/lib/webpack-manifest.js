@@ -1,12 +1,13 @@
+'use strict';
 var fs = require('fs');
 var path = require('path');
 
 module.exports = function (distPath, dest, filename) {
-  filename = filename || 'rev.manifest.json';
+  filename = filename || 'rev-manifest.json';
 
   return function () {
     this.plugin('done', function (stats) {
-      var stats = stats.toJSON();
+      stats = stats.toJson();
       var chunks = stats.assetsByChunkName;
       var manifest = {};
 
@@ -20,4 +21,4 @@ module.exports = function (distPath, dest, filename) {
       );
     });
   };
-}
+};

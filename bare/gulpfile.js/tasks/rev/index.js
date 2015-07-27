@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 
 // 1) Add md5 hashes to assets referenced by CSS and JS files

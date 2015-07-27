@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 var data = require('gulp-data');
 var gulpIf = require('gulp-if');
