@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Four-Oh-Four :: code-chimp</title>
-</head>
-<body>
-  <h1>A small haiku for your enjoyment:</h1>
-  <p>Error 404</p>
-  <p>The content could not be found</p>
-  <p>Let's go back to <a href="/">home</a></p>
-</body>
-</html>
+{% extends "layouts/page.html" %}
+
+{% block body %}
+<div id="404-page">
+  <div class="image-gradient-dynamic">
+    <img src="img/404_background.png" alt="soothing Asian background">
+    <div class="overlay"></div>
+    <div class="copy">
+      <p>Error 404</p>
+      <p>The content could not be found</p>
+      <p>Let's all go back <a href="/">home</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
